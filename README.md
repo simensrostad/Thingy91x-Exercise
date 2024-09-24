@@ -36,40 +36,25 @@ In order to flash you need to create a new terminal window and run the west DFU 
 ### Expected log output
 
 ```
-
-*** Booting Zephyr OS build v3.2.99-ncs2-34-gf8f113382356 ***
-[00:00:00.286,254] <inf> network: Bringing network interface up and connecting to the network
-[00:00:00.286,621] <dbg> mqtt_helper: mqtt_state_set: State transition: MQTT_STATE_UNINIT --> MQTT_STATE_DISCONNECTED
-[00:00:00.310,028] <dbg> mqtt_helper: mqtt_helper_poll_loop: Waiting for connection_poll_sem
-[00:00:04.224,426] <inf> network: Network connectivity established
-[00:00:09.233,612] <dbg> mqtt_helper: broker_init: Resolving IP address for test.mosquitto.org
-[00:00:10.541,839] <dbg> mqtt_helper: broker_init: IPv6 Address found 2001:41d0:1:925e::1 (AF_INET6)
-[00:00:10.541,900] <dbg> mqtt_helper: mqtt_state_set: State transition: MQTT_STATE_DISCONNECTED --> MQTT_STATE_TRANSPORT_CONNECTING
-[00:00:13.747,406] <dbg> mqtt_helper: mqtt_state_set: State transition: MQTT_STATE_TRANSPORT_CONNECTING --> MQTT_STATE_TRANSPORT_CONNECTED
-[00:00:13.747,467] <dbg> mqtt_helper: mqtt_state_set: State transition: MQTT_STATE_TRANSPORT_CONNECTED --> MQTT_STATE_CONNECTING
-[00:00:13.747,497] <dbg> mqtt_helper: client_connect: Using send socket timeout of 60 seconds
-[00:00:13.747,497] <dbg> mqtt_helper: mqtt_helper_connect: MQTT connection request sent
-[00:00:13.747,558] <dbg> mqtt_helper: mqtt_helper_poll_loop: Took connection_poll_sem
-[00:00:13.747,558] <dbg> mqtt_helper: mqtt_helper_poll_loop: Starting to poll on socket, fd: 0
-[00:00:13.747,589] <dbg> mqtt_helper: mqtt_helper_poll_loop: Polling on socket fd: 0
-[00:00:14.370,727] <dbg> mqtt_helper: mqtt_evt_handler: MQTT mqtt_client connected
-[00:00:14.370,788] <dbg> mqtt_helper: mqtt_state_set: State transition: MQTT_STATE_CONNECTING --> MQTT_STATE_CONNECTED
-[00:00:14.370,788] <inf> transport: Connected to MQTT broker
-[00:00:14.370,819] <inf> transport: Hostname: test.mosquitto.org
-[00:00:14.370,849] <inf> transport: Client ID: 350457791735879
-[00:00:14.370,880] <inf> transport: Port: 8883
-[00:00:14.370,880] <inf> transport: TLS: Yes
-[00:00:14.370,910] <dbg> mqtt_helper: mqtt_helper_subscribe: Subscribing to: F4CE37111350/my/subscribe/topic
-[00:00:14.494,354] <dbg> mqtt_helper: mqtt_helper_poll_loop: Polling on socket fd: 0
-[00:00:15.136,047] <dbg> mqtt_helper: mqtt_evt_handler: MQTT_EVT_SUBACK: id = 2469 result = 0
-[00:00:15.136,077] <inf> transport: Subscribed to topic F4CE37111350/my/subscribe/topic
-[00:00:15.136,108] <dbg> mqtt_helper: mqtt_helper_poll_loop: Polling on socket fd: 0
-[00:00:15.136,260] <dbg> mqtt_helper: mqtt_evt_handler: MQTT_EVT_PUBLISH, message ID: 52428, len = 850
-[00:00:15.136,444] <inf> transport: Received payload: Test message from mosquitto_pub! on topic: F4CE37111350/my/subscribe/topic
-[00:00:15.136,444] <dbg> mqtt_helper: mqtt_helper_poll_loop: Polling on socket fd: 0
-[00:00:44.495,147] <dbg> mqtt_helper: mqtt_helper_poll_loop: Polling on socket fd: 0
-[00:00:45.478,210] <dbg> mqtt_helper: mqtt_evt_handler: MQTT_EVT_PINGRESP
-
+*** Booting nRF Connect SDK v2.7.0-5cb85570ca43 ***
+*** Using Zephyr OS v3.6.99-100befc70c74 ***
+[00:00:00.298,675] <inf> network: Bringing network interface up and connecting to the network
+[00:00:00.557,159] <inf> nrf_modem_lib_trace: Trace thread ready
+[00:00:00.565,307] <inf> nrf_modem_lib_trace: Trace level override: 2
+[00:00:02.898,406] <inf> network: Network connectivity established
+[00:00:09.596,801] <inf> transport: Connected to MQTT broker
+[00:00:09.596,862] <inf> transport: Hostname: test.mosquitto.org
+[00:00:09.596,923] <inf> transport: Client ID: 355025930003742
+[00:00:09.596,923] <inf> transport: Port: 8883
+[00:00:09.596,954] <inf> transport: TLS: Yes
+[00:00:09.597,015] <inf> transport: Subscribing to: 355025930003742/my/subscribe/topic
+[00:00:09.764,373] <inf> transport: Subscribed to topic 355025930003742/my/subscribe/topic
+[00:00:53.669,006] <inf> transport: Published message: "Hello MQTT! Current temperature is: 27.860000" on topic: "355025930003742/my/publish/topic"
+[00:01:00.312,377] <inf> transport: Published message: "Hello MQTT! Current temperature is: 29.020000" on topic: "355025930003742/my/publish/topic"
+[00:02:00.312,561] <inf> transport: Published message: "Hello MQTT! Current temperature is: 29.220000" on topic: "355025930003742/my/publish/topic"
+[00:03:00.304,168] <inf> transport: Published message: "Hello MQTT! Current temperature is: 30.600000" on topic: "355025930003742/my/publish/topic"
+[00:04:00.312,927] <inf> transport: Published message: "Hello MQTT! Current temperature is: 31.500000" on topic: "355025930003742/my/publish/topic"
+[00:05:00.313,110] <inf> transport: Published message: "Hello MQTT! Current temperature is: 32.170000" on topic: "355025930003742/my/publish/topic"
 ```
 ### Modem tracing using the celluar monitor was covered in the session with Stig Bjørlykke
 
