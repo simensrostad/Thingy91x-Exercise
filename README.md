@@ -14,7 +14,7 @@ https://github.com/nrfconnect/sdk-nrf/tree/main/samples/net/mqtt
 ### Building and running
  1. Navigate to the MQTT sample in NCS (nrf/samples/net/mqtt)
  2. Modify the sample according to:
-https://github.com/nrfconnect/sdk-nrf/commit/4c3c48fb14cfb6ce8922a179a667fdcd10572dbb:
+https://github.com/nrfconnect/sdk-nrf/commit/4c3c48fb14cfb6ce8922a179a667fdcd10572dbb
 
  The patch:
  * Updates the sample to use a dev tag (to decrypt TLS traffic in wireshark)
