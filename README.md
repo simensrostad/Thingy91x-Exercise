@@ -29,10 +29,13 @@ CONFIG_MQTT_HELPER_SEC_TAG=2147483648
 ```
 west build -p -b thingy91x/nrf9151/ns -- -DEXTRA_CONF_FILE="overlay-tls-nrf91.conf" -Dapp_SNIPPET=nrf91-modem-trace-uart
 ```
- 5. Flash the firmware 
+ 5. Flash the firmware:
 ```
 west thingy91x-dfu
 ```
+Serial flashing is not currently supported in the VSCode extension!
+In order to flash you need to create a new terminal window and run the west DFU command there.
+
 
 ### Expected log output
 
