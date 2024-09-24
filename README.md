@@ -70,10 +70,15 @@ west thingy91x-dfu
 [00:00:44.495,147] <dbg> mqtt_helper: mqtt_helper_poll_loop: Polling on socket fd: 0
 [00:00:45.478,210] <dbg> mqtt_helper: mqtt_evt_handler: MQTT_EVT_PINGRESP
 ```
-
 ### Modem tracing using the celluar monitor was covered in the session with Stig Bjørlykke
-### Optional:
+
+### Optional - Subscribe to topic and observe data being received, alternatives:
 Subscribe to the MQTT topic that the device sends data to and observe that the data is sent to the broker.
 
-### Troubleshooting
-VScode terminal calling west thingy91x-dfu
+1. Online MQTT client: https://mqttx.app/web-client#/recent_connections
+2. MQTT client extensions in VScode - There are various
+3. Mosquitto CLI:
+
+```
+mosquitto_sub -h test.mosquitto.org -t 355025930003742/my/publish/topic
+```
