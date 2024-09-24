@@ -76,4 +76,4 @@ west thingy91x-dfu
 Subscribe to the MQTT topic that the device sends data to and observe that the data is sent to the broker.
 
 ### Troubleshooting
-??
+VScode terminal calling west thingy91x-dfu
