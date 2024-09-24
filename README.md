@@ -16,11 +16,12 @@ https://github.com/nrfconnect/sdk-nrf/tree/main/samples/net/mqtt
  2. Modify the sample according to:
 https://github.com/nrfconnect/sdk-nrf/commit/4c3c48fb14cfb6ce8922a179a667fdcd10572dbb:
 
-Updates the sample to use a dev tag (to decrypt TLS traffic in wireshark)
-Updates the sampler.c module to sample temperature
-Updates DT to use the BME680
-```
- 4. Build and run the sample with the TLS overlay and modem trace snippet:
+ The patch:
+ * Updates the sample to use a dev tag (to decrypt TLS traffic in wireshark)
+ * Updates the sampler.c module to sample temperature
+ * Updates DT to use the BME680
+
+ 3. Build and run the sample with the TLS overlay and modem trace snippet:
 ```
 west build -p -b thingy91x/nrf9151/ns -- -DEXTRA_CONF_FILE="overlay-tls-nrf91.conf" -Dapp_SNIPPET=nrf91-modem-trace-uart
 ```
@@ -35,6 +36,7 @@ In order to flash you need to create a new terminal window and run the west DFU 
 ### Expected log output
 
 ```
+
 *** Booting Zephyr OS build v3.2.99-ncs2-34-gf8f113382356 ***
 [00:00:00.286,254] <inf> network: Bringing network interface up and connecting to the network
 [00:00:00.286,621] <dbg> mqtt_helper: mqtt_state_set: State transition: MQTT_STATE_UNINIT --> MQTT_STATE_DISCONNECTED
@@ -67,6 +69,7 @@ In order to flash you need to create a new terminal window and run the west DFU 
 [00:00:15.136,444] <dbg> mqtt_helper: mqtt_helper_poll_loop: Polling on socket fd: 0
 [00:00:44.495,147] <dbg> mqtt_helper: mqtt_helper_poll_loop: Polling on socket fd: 0
 [00:00:45.478,210] <dbg> mqtt_helper: mqtt_evt_handler: MQTT_EVT_PINGRESP
+
 ```
 ### Modem tracing using the celluar monitor was covered in the session with Stig Bjørlykke
 
