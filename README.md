@@ -8,8 +8,8 @@ https://github.com/nrfconnect/sdk-nrf/tree/main/samples/net/mqtt
 ## Goals of exercise
  - Run the NCS NET MQTT sample on the Thingy91x
  - Modify the sample to sample and send sensor data to the MQTT broker
- - Observe in the MQTT server that the device is sending data
- - Trace TLS traffic using modem traces with a dev security tag
+ - Receive messages from the device on the MQTT topic
+ - Trace and decrypt TLS traffic using modem traces
 
 ### Building and running
  1. Navigate to the MQTT sample in NCS (nrf/samples/net/mqtt)
@@ -30,8 +30,7 @@ west build -p -b thingy91x/nrf9151/ns -- -DEXTRA_CONF_FILE="overlay-tls-nrf91.co
 west thingy91x-dfu
 ```
 Serial flashing is not currently supported in the VSCode extension!
-In order to flash you need to create a new terminal window and run the west DFU command there.
-
+In order to flash you need to create a new terminal window in VSCode and run the west DFU command there.
 
 ### Expected log output
 
@@ -56,7 +55,7 @@ In order to flash you need to create a new terminal window and run the west DFU 
 [00:04:00.312,927] <inf> transport: Published message: "Hello MQTT! Current temperature is: 31.500000" on topic: "355025930003742/my/publish/topic"
 [00:05:00.313,110] <inf> transport: Published message: "Hello MQTT! Current temperature is: 32.170000" on topic: "355025930003742/my/publish/topic"
 ```
-### Modem tracing using the celluar monitor was covered in the session with Stig Bjørlykke
+### Run the cellular monitor NCS Connect for Desktop application and trace modem traffic - Covered by Stig
 
 ### Optional - Subscribe to topic and observe data being received, alternatives:
 Subscribe to the MQTT topic that the device sends data to and observe that the data is sent to the broker.
