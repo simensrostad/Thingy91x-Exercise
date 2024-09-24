@@ -7,29 +7,18 @@ https://github.com/nrfconnect/sdk-nrf/tree/main/samples/net/mqtt
 
 ## Goals of exercise
  - Run the NCS NET MQTT sample on the Thingy91x
- - Modify the sample according to:
-https://github.com/nrfconnect/sdk-nrf/commit/4c3c48fb14cfb6ce8922a179a667fdcd10572dbb:
-
-Updates the sample to use a dev tag (to decrypt TLS traffic in wireshark)
-Updates the sampler.c module to sample temperature
-Updates DT to use the BME680
-
+ - Modify the sample to sample and send sensor data to the MQTT broker
  - Observe in the MQTT server that the device is sending data
  - Trace TLS traffic using modem traces with a dev security tag
 
 ### Building and running
  1. Navigate to the MQTT sample in NCS (nrf/samples/net/mqtt)
- 2. Go to src/modules/sampler and replace the function _sample()_ with the current function:
+ 2. Modify the sample according to:
+https://github.com/nrfconnect/sdk-nrf/commit/4c3c48fb14cfb6ce8922a179a667fdcd10572dbb:
 
-```sample
-static void sample(void)
-{
-	// something
-}
-```
- 3. Navigate to the overlay file overlay-tls-nrf91.conf and set the security tag in the dev tag range (2147483648– 2147483667):
-```
-CONFIG_MQTT_HELPER_SEC_TAG=2147483648
+Updates the sample to use a dev tag (to decrypt TLS traffic in wireshark)
+Updates the sampler.c module to sample temperature
+Updates DT to use the BME680
 ```
  4. Build and run the sample with the TLS overlay and modem trace snippet:
 ```
