@@ -15,9 +15,9 @@ https://github.com/nrfconnect/sdk-nrf/tree/main/samples/net/mqtt
  1. Navigate to the MQTT sample in NCS (nrf/samples/net/mqtt). _VSCode extension?_: Click on "Browse samples" and select the nRF SDK MQTT sample.
  2. Open up a "nRF Connect Terminal"
  3. Modify the sample according to changes in the following commit:
+
 https://github.com/nrfconnect/sdk-nrf/commit/4c3c48fb14cfb6ce8922a179a667fdcd10572dbb
 
- The patch:
  * Updates the sample to use a dev tag (to decrypt TLS traffic in wireshark)
  * Updates the sampler.c module to sample temperature
  * Updates DT to use the BME680
