@@ -27,6 +27,12 @@ If you don't want to do this manually you can pull in the changes with the follo
 git remote add simen https://github.com/simensrostad/fw-nrfconnect-nrf
 git remote update
 git cherry-pick 4c3c48fb14cfb6ce8922a179a667fdcd10572dbb
+
+or
+
+git fetch ncs refs/pull/17472/head && git checkout FETCH_HEAD
+git cherry-pick 4c3c48fb14cfb6ce8922a179a667fdcd10572dbb
+
 ```
  3. Build and run the sample with the TLS overlay and modem trace snippet using the terminal:
 ```
